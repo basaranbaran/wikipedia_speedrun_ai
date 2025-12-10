@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from sentence_transformers import SentenceTransformer, util
 import torch
 
-# --- Global Model Loading ---
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f"⚙️  [UTILS] Hardware: {torch.cuda.get_device_name(0) if device == 'cuda' else 'CPU'}")
 print("⚙️  [UTILS] Loading SBERT Model...")
@@ -28,7 +27,6 @@ def get_clean_links(url):
         href = a['href']
         title = a.get_text().strip()
 
-        # Filter out non-article links
         if (href.startswith("/wiki/") and ":" not in href and title and
                 "Main_Page" not in href and "Identifier" not in title and "Wayback" not in title):
             full_url = "https://en.wikipedia.org" + href

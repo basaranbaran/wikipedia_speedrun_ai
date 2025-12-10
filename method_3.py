@@ -5,11 +5,7 @@ import re
 
 def run_step(current_page_title, target_topic, target_keywords, links):
     link_titles = list(links.keys())
-
-    # Step 1: Filter top 5 (Focused context)
     candidates = utils.find_best_sbert_matches(link_titles, target_keywords, top_k=5)
-
-    # Step 2: Chain of Thought Reasoning
     candidates_str = "\n".join([f"- {c}" for c in candidates])
 
     prompt = f"""
@@ -27,7 +23,6 @@ def run_step(current_page_title, target_topic, target_keywords, links):
         response = ollama.chat(model="llama3.1", messages=[{'role': 'user', 'content': prompt}])
         content = response['message']['content']
 
-        # Extract [[Link]] format
         match = re.search(r'\[\[(.*?)\]\]', content)
         if match:
             choice = match.group(1).strip()
@@ -35,7 +30,6 @@ def run_step(current_page_title, target_topic, target_keywords, links):
                 if cand.lower() in choice.lower():
                     return cand
 
-        # Fallback search in content
         for cand in candidates:
             if cand.lower() in content.lower():
                 return cand

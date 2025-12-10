@@ -4,7 +4,6 @@ import method_1
 import method_2
 import method_3
 
-# --- Scenarios ---
 SCENARIOS = [
     {"start": "https://en.wikipedia.org/wiki/Potato", "target": "Barack Obama", "keywords": "Barack Obama president"},
     {"start": "https://en.wikipedia.org/wiki/Sharknado_2:_The_Second_One", "target": "William Shakespeare", "keywords": "William Shakespeare writer"},
@@ -33,7 +32,6 @@ def play_game(agent_func, start_url, target, keywords):
         page_title = current_url.split("/wiki/")[-1].replace("_", " ")
         path.append(page_title)
 
-        # Check Success
         if target.lower() in page_title.lower():
             return {"status": "WIN", "time": time.time() - start_time, "steps": step, "path": path}
 
@@ -55,7 +53,6 @@ def play_game(agent_func, start_url, target, keywords):
             choice = direct_match
             print(f"      ⚡ [Step {step}] Shortcut Found: '{choice}'")
         else:
-            # Agent Decision
             choice = agent_func(page_title, target, keywords, valid_links)
             print(f"      👉 [Step {step}] {page_title} --> '{choice}'")
 
@@ -70,7 +67,6 @@ def play_game(agent_func, start_url, target, keywords):
     return {"status": "TIMEOUT", "time": 0, "steps": MAX_STEPS, "path": path}
 
 
-# --- Main Loop ---
 print("\n" + "=" * 60)
 print("🏆 WIKIPEDIA SPEEDRUN ALGORITHM BATTLE 🏆")
 print("=" * 60 + "\n")
@@ -106,7 +102,6 @@ for scenario in SCENARIOS:
 
     print("\n" + "#" * 60 + "\n")
 
-# --- Results Table ---
 print("\n" + "=" * 90)
 print(f"{'SCENARIO':<35} | {'METHOD':<18} | {'STATUS':<8} | {'TIME':<8} | {'STEPS'}")
 print("=" * 90)
