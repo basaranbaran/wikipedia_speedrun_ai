@@ -1,6 +1,6 @@
 # 🏎️ Wikipedia Speedrun AI (Local LLM & SBERT)
 
-**[🇹🇷 Türkçe Dokümantasyon için tıklayın](#türkçe-dokümantasyon)** | **[📖 English Documentation](#-overview)** | **[📊 Video Karşılaştırması](COMPARISON.md)**
+**[Türkçe Dokümantasyon için tıklayın](#türkçe-dokümantasyon)** | **[📖 English Documentation](#-overview)** | **[📊 Video Karşılaştırması](COMPARISON.md)**
 
 A **Tool-Assisted Speedrun (TAS)** bot for the Wikipedia Game that uses local AI models to navigate from a random Wikipedia page to a target page by clicking only links, without going back.
 
