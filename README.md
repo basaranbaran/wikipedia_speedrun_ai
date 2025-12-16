@@ -54,7 +54,7 @@ The project implements and compares three different algorithmic approaches:
   - Context-blind
   - Easily trapped by homonyms (words that look alike but mean different things)
 
-### 3. Chain-of-Thought (The Professor 🤔)
+### 3. Chain-of-Thought (The Professor)
 **File:** `method_3.py`
 
 - **Logic:** Filters top 5 links, then asks Llama 3.1 to **explain its reasoning** before selecting a link.
