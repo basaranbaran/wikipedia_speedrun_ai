@@ -2,7 +2,7 @@
 
 **[Türkçe Dokümantasyon için tıklayın](#türkçe-dokümantasyon)** | **[📖 English Documentation](#-overview)** | **[📊 Video Karşılaştırması](COMPARISON.md)**
 
-Tool-Assisted Speedrun (TAS) bot for the Wikipedia Game that uses local AI models to navigate from a random Wikipedia page to a target page by clicking only links, without going back.
+Tool Assisted Speedrun (TAS) bot for the Wikipedia Game that uses local AI models to navigate from a random Wikipedia page to a target page by clicking only links, without going back.
 
 This project runs entirely **offline** using your GPU, combining **Semantic Search (SBERT)** for filtering and **Large Language Models (Llama 3.1 via Ollama)** for logical reasoning.
 
